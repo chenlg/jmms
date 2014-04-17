@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name:  JMMS Common Shared Area
+Bundle-Version: 1.0.0
+Bundle-Vendor: lingang.chen@gmail.com

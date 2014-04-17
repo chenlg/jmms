@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.jmms</groupId>
+		<artifactId>jmms-biz-service</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	
+	<groupId>com.jmms</groupId>
+	<artifactId>jmms-biz-service-handle</artifactId>
+	<version>1.0.0</version>
+	
+	<packaging>jar</packaging>
+	
+	<name>jmms-biz-service-handle</name>
+	<url>http://maven.apache.org</url>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.jmms</groupId>
+			<artifactId>jmms-core-domain</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jmms</groupId>
+			<artifactId>jmms-biz-shared</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jmms</groupId>
+			<artifactId>jmms-common-service-facade</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jmms</groupId>
+			<artifactId>jmms-common-utils</artifactId>
+		</dependency>
+	</dependencies>
+</project>

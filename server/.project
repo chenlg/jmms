@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>jmms-server</name>
+	<comment>JMMS Webapp Area. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
+	<projects>
+		<project>jmms-biz-service-handle</project>
+		<project>jmms-core-domain</project>
+		<project>jmms-common-utils</project>
+		<project>jmms-core-persistant-repository</project>
+		<project>jmms-core-persistant-po</project>
+		<project>jmms-biz-shared</project>
+		<project>jmms-common-service-facade</project>
+		<project>jmms-common-service-response</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+</projectDescription>

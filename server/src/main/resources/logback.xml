@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <configuration debug="true"> 调试模式下，可输出logback的内部日志信息 -->
+<configuration>
+	<!-- 定义变量${user.dir} -->
+	<property name="LOG_HOME" value="logs" />
+	<!-- 引用其它文件的设置 <property file="res/log_config.properties" /> -->
+
+	<!-- appender(输出端) 此处是控制台输出，用的是ConsoleAppender,STDOUT，此名字随意起，和root下的一致就行 -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<!-- ===================================================================== -->
+	<!-- 文件输出 -->
+	<!-- ===================================================================== -->
+
+	<!-- ===================================================================== -->
+	<!-- Appenders -->
+	<!-- ===================================================================== -->
+	<!-- [公共Appender] 默认 -->
+	<appender name="DEFAULT-APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/jmms/jmms-default.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!--日志文件输出的文件名 -->
+			<fileNamePattern>${LOG_HOME}/jmms/jmms-default.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<!--%date日期 %level日志级别 [%thread]当前线程 %logger{50}输出日志的类，50代表包名加类名的总长度限制 
+				[%file:%line]日志所在文件及行数 %msg%n消息及换行 -->
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<!-- [公共Appender] 汇总错误 -->
+	<appender name="ERROR-APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/jmms/jmms-error.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/jmms/jmms-error.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter"><!-- 只打印错误日志 -->
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+	</appender>
+
+	<!-- ===================================================================== -->
+	<!-- Biz 层 Appenders -->
+	<!-- ===================================================================== -->
+	<!-- [Biz层 Appender] 默认 -->
+	<appender name="BIZ-APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/jmms/jmms-biz-default.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/jmms/jmms-biz-default.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="BIZ-SERVICE-APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/jmms/jmms-biz-service.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/jmms/jmms-biz-service.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="BIZ-PROCESS-APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/jmms/jmms-biz-process.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/jmms/jmms-biz-process.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<!-- ===================================================================== -->
+	<!-- Common 层 Appenders -->
+	<!-- ===================================================================== -->
+	<!-- [common公共Appender] 默认 -->
+	<appender name="COMMON-APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/jmms/jmms-common-default.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/jmms/jmms-common-default.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="COMMON-SERVICE-APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/jmms/jmms-common-service.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/jmms/jmms-common-service.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="COMMON-UTILS-APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/jmms/jmms-common-utils.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/jmms/jmms-common-utils.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<!-- ===================================================================== -->
+	<!-- Core 层 Appenders -->
+	<!-- ===================================================================== -->
+	<!-- [core公共Appender] 默认 -->
+	<appender name="CORE-APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/jmms/jmms-core-default.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/jmms/jmms-core-default.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="CORE-DOMAIN-APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/jmms/jmms-core-domain.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/jmms/jmms-core-domain.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="CORE-PROCESS-APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/jmms/jmms-core-process.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/jmms/jmms-core-process.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+
+	<!-- ===================================================================== -->
+	<!-- 单独为某些类定输出级别 -->
+	<!-- ===================================================================== -->
+
+	<!-- ===================================================================== -->
+	<!-- biz 层 loggers -->
+	<!-- ===================================================================== -->
+	<logger name="BIZ_ASPECT_DIGEST" level="INFO">
+		<appender-ref ref="BIZ-APPENDER" />
+	</logger>
+	<logger name="com.jmms.biz.service" level="INFO">
+		<appender-ref ref="BIZ-SERVICE-APPENDER" />
+	</logger>
+	<logger name="com.jmms.biz.shared" level="INFO">
+		<appender-ref ref="BIZ-SERVICE-APPENDER" />
+	</logger>
+	<logger name="com.jmms.biz.process" level="INFO">
+		<appender-ref ref="BIZ-PROCESS-APPENDER" />
+	</logger>
+
+	<!-- ===================================================================== -->
+	<!-- common 层 loggers -->
+	<!-- ===================================================================== -->
+	<logger name="COMMON_ASPECT_DIGEST" level="INFO">
+		<appender-ref ref="COMMON-APPENDER" />
+	</logger>
+	<logger name="com.jmms.common.service" level="INFO">
+		<appender-ref ref="COMMON-SERVICE-APPENDER" />
+	</logger>
+	<logger name="com.jmms.common.utils" level="INFO">
+		<appender-ref ref="COMMON-UTILS-APPENDER" />
+	</logger>
+
+	<!-- ===================================================================== -->
+	<!-- core 层 loggers -->
+	<!-- ===================================================================== -->
+	<logger name="CORE_ASPECT_DIGEST" level="INFO">
+		<appender-ref ref="CORE-APPENDER" />
+	</logger>
+	<logger name="com.jmms.core.domain" level="INFO">
+		<appender-ref ref="CORE-DOMAIN-APPENDER" />
+	</logger>
+	<logger name="com.jmms.core.process" level="INFO">
+		<appender-ref ref="CORE-PROCESS-APPENDER" />
+	</logger>
+
+	<!-- 级别定义，输出端内容输出级别，大于或等于root定义的level，方能在输出端输出 -->
+	<!-- ===================================================================== -->
+	<!-- Root logger -->
+	<!-- ===================================================================== -->
+	<root level="DEBUG">
+		<appender-ref ref="console" />
+		<appender-ref ref="DEFAULT-APPENDER" />
+		<appender-ref ref="ERROR-APPENDER" />
+	</root>
+</configuration>

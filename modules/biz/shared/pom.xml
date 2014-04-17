@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.jmms</groupId>
+		<artifactId>jmms-biz</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<groupId>com.jmms</groupId>
+	<artifactId>jmms-biz-shared</artifactId>
+	<version>1.0.0</version>
+
+	<packaging>jar</packaging>
+
+	<name>jmms-biz-shared</name>
+	<url>http://maven.apache.org</url>
+	<description>JMMS Modules Biz Shared Area</description>
+
+	<dependencies>
+	
+		<!-- Monitor begin -->
+		<!-- javasimon -->
+		<dependency>
+			<groupId>org.javasimon</groupId>
+			<artifactId>javasimon-spring</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.javasimon</groupId>
+			<artifactId>javasimon-jdbc4</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.javasimon</groupId>
+			<artifactId>javasimon-console-embed</artifactId>
+		</dependency>
+		<!-- Monitor end -->
+
+		<dependency>
+			<groupId>com.jmms</groupId>
+			<artifactId>jmms-common-utils</artifactId>
+		</dependency>
+	</dependencies>
+</project>

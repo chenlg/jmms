@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.jmms</groupId>
+    <artifactId>jmms-common</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  
+  <groupId>com.jmms</groupId>
+  <artifactId>jmms-common-service</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  
+  <name>jmms-common-service</name>
+  <url>http://maven.apache.org</url>
+   
+   
+	<profiles>
+		<profile>
+			<id>refresh-synopsis</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-site-plugin</artifactId>
+						<configuration>
+							<locales>zh_CN</locales>
+							<destDir>report</destDir>
+							<aggregate>true</aggregate>
+							<attach>true</attach>
+							<outputDirectory>..\..\..\target</outputDirectory>
+							<reportOutputDirectory>..\..\..\target</reportOutputDirectory>
+							<reportPlugins>
+								<plugin>
+									<groupId>org.apache.maven.plugins</groupId>
+									<artifactId>maven-project-info-reports-plugin</artifactId>
+									<configuration>
+										<dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+										<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+									</configuration>
+									<reportSets>
+										<reportSet>
+											<reports>
+												<report>index</report>
+												<report>dependencies</report>
+												<report>project-team</report>
+												<report>license</report>
+											</reports>
+										</reportSet>
+									</reportSets>
+								</plugin>
+								
+								<plugin>
+									<groupId>org.apache.maven.plugins</groupId>
+									<artifactId>maven-javadoc-plugin</artifactId>
+									<configuration>
+										<excludePackageNames>com.jmms.common.service.remote:</excludePackageNames>
+										<aggregate>true</aggregate>
+										<failOnError>false</failOnError>
+									</configuration>
+								</plugin>
+								
+								<plugin>
+									<groupId>org.apache.maven.plugins</groupId>
+									<artifactId>maven-jxr-plugin</artifactId>
+									<configuration>
+										<javadocDir>..\..\..\target\apidocs</javadocDir>
+										<aggregate>true</aggregate>
+										<linkJavadoc>true</linkJavadoc>
+									</configuration>
+								</plugin>
+							</reportPlugins>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+	
+  <modules>
+    <module>remote</module>
+    <module>response</module>
+    <module>facade</module>
+  </modules>
+</project>

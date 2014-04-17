@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.jmms</groupId>
+		<artifactId>jmms-common-service</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<groupId>com.jmms</groupId>
+	<artifactId>jmms-common-service-facade</artifactId>
+	<version>1.0.0</version>
+
+	<packaging>jar</packaging>
+
+	<name>jmms-common-service-facade</name>
+	<url>http://maven.apache.org</url>
+	<description>JMMS Modules Common Service Facade Area</description>
+
+	<dependencies>
+
+		<!-- Spring webmvc begin -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+		<!-- Spring end -->
+
+		<!-- SOAP begin -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+		</dependency>
+		<!-- SOAP end -->
+
+		<!-- JAX-RS begin -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+		</dependency>
+		<!-- JAX-RS end -->
+
+		<dependency>
+			<groupId>com.jmms</groupId>
+			<artifactId>jmms-common-service-response</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.jmms</groupId>
+			<artifactId>jmms-common-utils</artifactId>
+		</dependency>
+	</dependencies>
+</project>

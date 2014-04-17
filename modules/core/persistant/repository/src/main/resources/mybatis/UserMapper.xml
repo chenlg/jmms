@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.jmms.core.persistant.repository.account.UserMybatisDao">
+	<!--
+		获取用户: 输出直接映射到对象, user_name列要"as userName"以方便映射 
+	-->
+	<select id="get" parameterType="int" resultType="UserPO">
+		select user_id as userId, user_name as userName, user_email as userEmail,
+		user_account as userAccount,permissions as permissions
+		from ss_user
+		where user_id=#{userId}
+	</select>
+
+	<!-- 插入用户: 1.由数据库生成id并赋值到user对象 2.输入用对象 -->
+	<insert id="save" parameterType="UserPO" useGeneratedKeys="true" keyProperty="userId">
+		insert into ss_user (
+		user_name, user_account, user_pwd, user_email,status,permissions)
+		values (
+		#{userName}, #{userAccount}, #{userPwd},#{userEmail},#{status},
+		#{permissions})
+	</insert>
+	
+	<!-- 删除用户 -->
+	<delete id="delete" parameterType="int">
+	     delete from ss_user where user_id=#{userId}
+	</delete>
+</mapper> 

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<project xmlns="http://maven.apache.org/DECORATION/1.4.0"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://maven.apache.org/DECORATION/1.4.0 http://maven.apache.org/xsd/decoration-1.4.0.xsd"  
+    name="Account Email">  
+    <bannerLeft>  
+        <name>Project Name</name>  
+        <src>images/banner-left.png</src>  
+        <width>300</width>  
+        <height>80</height>  
+        <href>http://maven.apache.org/</href>  
+        <border>2</border>  
+    </bannerLeft>  
+    <bannerRight>  
+        <name>bannerRight image</name>  
+        <src>images/banner-right.png</src>  
+        <height>80</height>  
+        <width>200</width>  
+        <href>http://www.google.com</href>  
+        <border>2</border>  
+    </bannerRight>  
+    <publishDate position="right" format="yyyy-MM-dd" />  
+    <version position="left" />  
+    <poweredBy>  
+        <logo name="Maven" href="http://maven.apache.org/"  
+            img="http://maven.apache.org/images/logos/build-by-maven-black.png" />  
+    </poweredBy>  
+  
+    <!--配置站点皮肤-->  
+    <skin>  
+        <groupId>org.apache.maven.skins</groupId>  
+        <artifactId>maven-classic-skin</artifactId>  
+        <version>1.0</version>  
+    </skin>  
+  
+    <body>  
+        <head />  
+        <links>  
+            <item name="Maven" href="http://maven.apache.org" />  
+            <item name="Google" href="http://www.google.com" />  
+        </links>  
+        <!--配置站点导航链接-->  
+        <breadcrumbs>  
+            <item name="导航" href="index.html" />  
+            <item name="Doxia" href="http://maven.apache.org/doxia/index.html" />  
+        </breadcrumbs>  
+  
+        <menu name="${project.name}">  
+            <item name="Introduction" href="index.html"/>  
+            <item name="News" href="news.html"/>  
+            <item name="Features" href="features.html"/>  
+            <item name="Installation" href="installation.html"/>  
+            <item name="Configuration" href="configuration.html"/>  
+            <item name="FAQ" href="faq.html"/>  
+            <!--菜单嵌套-->  
+            <item name="Developer Resources" href="/developer/index.html" collapse="true">  
+            <item name="System Architecture" href="/developer/architecture.html"/>  
+            <item name="Embedder's Guide" href="/developer/embedding.html"/>  
+            </item>  
+        </menu>  
+        <menu name="Documentation">  
+            <item name="Standard Usage" href="#.html" />  
+            <item name="Continuum Integration" href="#.html" />  
+        </menu>  
+        <menu name="Sample reports">  
+            <item name="Single project" href="#.html" />  
+            <item name="Multimodule projects" href="#.html" />  
+            <item name="Historic report" href="#.html" />  
+        </menu>  
+        <menu name="Project Documentation">  
+            <item name="Project Information" href="project-info.html" />  
+            <item name="Project Reports" href="project-reports.html" />  
+        </menu>  
+        <menu ref="reports"/>  
+    </body>  
+  
+    <custom>  
+        <fluidoSkin>  
+            <topBarEnabled>true</topBarEnabled>  
+            <sideBarEnabled>true</sideBarEnabled>  
+        </fluidoSkin>  
+    </custom>  
+</project>  

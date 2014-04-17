@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.jmms</groupId>
+		<artifactId>jmms-modules</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<groupId>com.jmms</groupId>
+	<artifactId>jmms-test</artifactId>
+	<version>1.0.0</version>
+
+	<name>jmms-test</name>
+
+	<url>http://maven.apache.org</url>
+
+	<dependencies>
+		<!-- TEST begin -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<!-- assertj -->
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+		</dependency>
+
+		<!-- selenium 2.0 -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-remote-driver</artifactId>
+		</dependency>
+
+		<!-- jetty -->
+		<dependency>
+			<groupId>org.eclipse.jetty.aggregate</groupId>
+			<artifactId>jetty-webapp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-jsp</artifactId>
+		</dependency>
+		<!-- TEST end -->
+
+		<!-- biz level begin -->
+		<dependency>
+			<groupId>com.jmms</groupId>
+			<artifactId>jmms-biz-process</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.jmms</groupId>
+			<artifactId>jmms-biz-service-handle</artifactId>
+		</dependency>
+		<!-- biz end -->
+
+		<!-- common level begin -->
+		<dependency>
+			<groupId>com.jmms</groupId>
+			<artifactId>jmms-common-service-facade</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.jmms</groupId>
+			<artifactId>jmms-common-service-remote</artifactId>
+		</dependency>
+		<!-- common end -->
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- 增加functional test的Source目录 -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-functional-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-test-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>src/test/functional</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- test插件,设定內存 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<argLine>-Xmx256M</argLine>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>
