@@ -51,7 +51,6 @@ public class AccountDomainClientTest {
         user.setUserAccount(userName);
         user.setStatus(true);
 
-        // 正常保存用户.
         accountDomain.saveUser(user);
         Mockito.verify(userDao, Mockito.never()).delete(new Integer(1));
     }

@@ -40,7 +40,7 @@
 					<warName>jmms</warName>
 				</configuration>
 			</plugin>
-			
+
 			<!-- tomcat 7 插件 -->
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
@@ -72,44 +72,37 @@
 					<classesDirectory>target/classes</classesDirectory>
 					<!-- 额外扫描的class路径 -->
 					<scanTargets>
-						<scanTarget>../cmmi-modules/cmmi-biz/cmmi-biz-process/cmmi-biz-process-daemon/target/classes</scanTarget>
-						<scanTarget>../cmmi-modules/cmmi-biz/cmmi-biz-process/cmmi-biz-process-sercurity/target/classes</scanTarget>
-						<scanTarget>../cmmi-modules/cmmi-biz/cmmi-biz-service/cmmi-biz-service-escape/target/classes</scanTarget>
-						<scanTarget>../cmmi-modules/cmmi-biz/cmmi-biz-service/cmmi-biz-service-logic/target/classes</scanTarget>
-						<scanTarget>../cmmi-modules/cmmi-biz/cmmi-biz-shared/target/classes</scanTarget>
-						<scanTarget>../cmmi-modules/cmmi-common/cmmi-common-service/cmmi-common-service-facade/target/classes</scanTarget>
-						<scanTarget>../cmmi-modules/cmmi-common/cmmi-common-service/cmmi-common-service-remote/target/classes</scanTarget>
-						<scanTarget>../cmmi-modules/cmmi-common/cmmi-common-service/cmmi-common-service-response/target/classes</scanTarget>
-						<scanTarget>../cmmi-modules/cmmi-common/cmmi-common-shared/target/classes</scanTarget>
-						<scanTarget>../cmmi-modules/cmmi-common/cmmi-common-utils/target/classes</scanTarget>
-						<scanTarget>../cmmi-modules/cmmi-core/cmmi-core-domain/target/classes</scanTarget>
-						<scanTarget>../cmmi-modules/cmmi-core/cmmi-core-persistant/cmmi-core-persistant-po/target/classes</scanTarget>
-						<scanTarget>../cmmi-modules/cmmi-core/cmmi-core-persistant/cmmi-core-persistant-repository/target/classes</scanTarget>
-						<scanTarget>../cmmi-modules/cmmi-core/cmmi-core-process/cmmi-core-process-cache/target/classes</scanTarget>
-						<scanTarget>../cmmi-modules/cmmi-core/cmmi-core-process/cmmi-core-process-extension/target/classes</scanTarget>
-						<scanTarget>../cmmi-modules/cmmi-core/cmmi-core-shared/target/classes</scanTarget>
+						<scanTarget>../modules/biz/process/target/classes</scanTarget>
+						<scanTarget>../modules/biz/service/handle/target/classes</scanTarget>
+						<scanTarget>../modules/biz/shared/target/classes</scanTarget>
+						<scanTarget>../modules/common/service/facade/target/classes</scanTarget>
+						<scanTarget>../modules/common/service/remote/target/classes</scanTarget>
+						<scanTarget>../modules/common/service/response/target/classes</scanTarget>
+						<scanTarget>../modules/common/shared/target/classes</scanTarget>
+						<scanTarget>../modules/common/utils/target/classes</scanTarget>
+						<scanTarget>../modules/core/domain/target/classes</scanTarget>
+						<scanTarget>../modules/core/persistant/po/target/classes</scanTarget>
+						<scanTarget>../modules/core/persistant/repository/target/classes</scanTarget>
+						<scanTarget>../modules/core/process/target/classes</scanTarget>
+						<scanTarget>../modules/core/shared/target/classes</scanTarget>
 					</scanTargets>
 
-
 					<webAppConfig>
-						<contextPath>/cmmi</contextPath>
+						<contextPath>/jmms</contextPath>
 						<extraClasspath>
-							../cmmi-modules/cmmi-biz/cmmi-biz-process/cmmi-biz-process-daemon/target/classes;
-							../cmmi-modules/cmmi-biz/cmmi-biz-process/cmmi-biz-process-sercurity/target/classes;
-							../cmmi-modules/cmmi-biz/cmmi-biz-service/cmmi-biz-service-escape/target/classes;
-							../cmmi-modules/cmmi-biz/cmmi-biz-service/cmmi-biz-service-logic/target/classes;
-							../cmmi-modules/cmmi-biz/cmmi-biz-shared/target/classes;
-							../cmmi-modules/cmmi-common/cmmi-common-service/cmmi-common-service-facade/target/classes;
-							../cmmi-modules/cmmi-common/cmmi-common-service/cmmi-common-service-remote/target/classes;
-							../cmmi-modules/cmmi-common/cmmi-common-service/cmmi-common-service-response/target/classes;
-							../cmmi-modules/cmmi-common/cmmi-common-shared/target/classes;
-							../cmmi-modules/cmmi-common/cmmi-common-utils/target/classes;
-							../cmmi-modules/cmmi-core/cmmi-core-domain/target/classes;
-							../cmmi-modules/cmmi-core/cmmi-core-persistant/cmmi-core-persistant-po/target/classes;
-							../cmmi-modules/cmmi-core/cmmi-core-persistant/cmmi-core-persistant-repository/target/classes;
-							../cmmi-modules/cmmi-core/cmmi-core-process/cmmi-core-process-cache/target/classes;
-							../cmmi-modules/cmmi-core/cmmi-core-process/cmmi-core-process-extension/target/classes;
-							../cmmi-modules/cmmi-core/cmmi-core-shared/target/classes;
+							../modules/biz/process/target/classes;
+							../modules/biz/service/handle/target/classes;
+							../modules/biz/shared/target/classes;
+							../modules/common/service/facade/target/classes;
+							../modules/common/service/remote/target/classes;
+							../modules/common/service/response/target/classes;
+							../modules/common/shared/target/classes;
+							../modules/common/utils/target/classes;
+							../modules/core/domain/target/classes;
+							../modules/core/persistant/po/target/classes;
+							../modules/core/persistant/repository/target/classes;
+							../modules/core/process/target/classes;
+							../modules/core/shared/target/classes;
 						</extraClasspath>
 					</webAppConfig>
 				</configuration>

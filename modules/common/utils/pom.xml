@@ -12,6 +12,7 @@
 	<groupId>com.jmms</groupId>
 	<artifactId>jmms-common-utils</artifactId>
 	<version>1.0.0</version>
+	
 	<packaging>jar</packaging>
 
 	<name>jmms-common-utils</name>
